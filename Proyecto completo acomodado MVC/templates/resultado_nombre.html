@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resultados de la Búsqueda</title>
+</head>
+<body>
+    <h1>Resultados de la Búsqueda</h1>
+    <ul>
+        {% for alumno, solicitud in alumnos_con_solicitud %}
+        <li>
+            <strong>Nombre del alumno:</strong> {{ alumno.Nombre_completo }}<br>
+            <strong>CURP:</strong> {{ alumno.Curp }}<br>
+            <strong>Teléfono:</strong> {{ alumno.telefono }}<br>
+            <strong>Solicitud:</strong> {{ solicitud.Proceso }}
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

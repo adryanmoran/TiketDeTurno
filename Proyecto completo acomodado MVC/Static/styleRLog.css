@@ -1,0 +1,220 @@
+body {
+  background-color: #0f0f0f;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  padding: 50px;
+}
+
+h2 {
+  font-size: 2.5em;
+  margin-bottom: 30px;
+}
+
+input[type="text"],
+input[type="password"],
+select,
+textarea {
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #333;
+  color: #fff;
+  width: 100%;
+  padding: 10px;
+}
+
+button[type="submit"] {
+  min-height: 53px;
+  min-width: 166px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+  cursor: pointer;
+  background: linear-gradient(90deg, rgba(110, 239, 255, .5) -12.74%, rgba(106, 224, 255, .271) 56.76%);
+  border: 2px solid #acf7ff;
+  color: #FFFFFF;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 5px;
+  padding: 10px 20px;
+}
+
+button[type="submit"]:hover {
+  background-color: #ff8c00;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* Estilos responsivos */
+
+@media screen and (max-width: 768px) {
+  body {
+      padding: 20px;
+  }
+
+  h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+  }
+
+  input[type="text"],
+  input[type="password"],
+  select,
+  textarea {
+      width: 100%;
+      padding: 8px;
+  }
+
+  button[type="submit"] {
+      padding: 8px 16px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  body {
+      padding: 10px;
+  }
+
+  h2 {
+      font-size: 1.5em;
+      margin-bottom: 15px;
+  }
+
+  input[type="text"],
+  input[type="password"],
+  select,
+  textarea {
+      width: 100%;
+      padding: 6px;
+  }
+
+  button[type="submit"] {
+      padding: 6px 12px;
+  }
+}
+
+.card {
+  position: relative;
+  width: 60%;
+  max-width: 500px;
+  height: auto;
+  margin: 0 auto;
+  margin-top: 1px;
+  box-sizing: border-box;
+  background-color: #212121;
+  border: 5px solid #222;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
+              rgba(0, 0, 0, 0.23) 0px 6px 6px,
+              inset rgba(0, 0, 0, 0.19) 0px 10px 20px,
+              inset rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  transition: all ease-in-out 0.3s;
+  overflow: hidden;
+}
+
+.card:hover {
+  box-shadow: rgba(193, 44, 223, 0.19) 0px 10px 20px,
+              rgba(193, 44, 223, 0.23) 0px 6px 6px,
+              inset rgba(0, 0, 0, 0.19) 0px 10px 20px,
+              inset rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  border: 5px solid #b671d6;
+}
+
+.card-title {
+  margin: 0;
+  font-size: 18px;
+  font-family: Arial, sans-serif;
+  font-weight: 600;
+  color: #fff;
+  cursor: default;
+}
+
+.card-des {
+  margin: 0;
+  font-size: 15px;
+  font-family: Arial, sans-serif;
+  font-weight: 600;
+  color: #fff;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+  cursor: default;
+}
+
+.card-text {
+  position: absolute;
+  margin: 0;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+  font-weight: 400;
+  color: #fff;
+  right: 20px;
+  bottom: 5px;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  opacity: 0;
+  transition: all ease-in-out 0.3s;
+  animation: textanimate 0.8s alternate infinite;
+  cursor: pointer;
+}
+
+.card:hover > .card-text {
+  opacity: 1;
+}
+
+@keyframes textanimate {
+  0% {
+      right: 20px;
+  }
+
+  100% {
+      right: 10px;
+  }
+}
+
+.arrow-icon {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+button:before {
+  content: "";
+  width: 4px;
+  height: 28px;
+  background: #19173b;
+  border: 2px solid #acf7ff;
+  transform: rotate(-45deg);
+  position: absolute;
+  border-top: 0;
+  border-left: 0;
+  border-bottom: 0;
+  bottom: -7px;
+  left: 4px;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+button:after {
+  content: "";
+  position: absolute;
+  left: -2px;
+  bottom: -2px;
+  border-top: 15px solid transparent;
+  border-left: 15px solid #fffcf7;
+}
+.error {
+  color: red;
+  border: 1px solid red;
+}

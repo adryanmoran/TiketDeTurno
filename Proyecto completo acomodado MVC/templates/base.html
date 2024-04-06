@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='perfil.css') }}">
+
+    <title>{% block title %} {% endblock %}</title>
+    <style>
+        body {
+            /* Use a background color as a fallback */
+            background-color: #f0f0f0;
+    
+            /* Set the background image */
+            background-image: url("{{ url_for('static', filename='fondo9.jpeg') }}");
+    
+            /* Ensure the background covers the entire body */
+            background-size: cover;
+    
+            /* Center the background image */
+            background-position: center;
+    
+            /* Fixed background to prevent scrolling */
+            background-attachment: fixed;
+    
+            /* Add some opacity to the background image */
+            opacity: 0.8;
+        }
+    </style>
+    <style>
+        body {
+            background-color: white;
+            text-align: center;
+        }
+        #content {
+            margin: 0 auto;
+            width: 50%;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Inicio</a></li>
+            <li><a href="/buscar_alumno_nombre">Buscar Alumno por Nombre</a></li>
+            <li><a href="/crud_asunto">Administrar Asuntos</a></li>
+            <li><a href="/crud_nivel">Administrar Niveles</a></li>
+            <li><a href="/grafica">Dashboard</a></li> 
+            <a href="{{ url_for('logout') }}">Cerrar Sesión</a>
+        </ul>
+    </nav>
+    <hr>
+    {% block content %} {% endblock %}
+</body>
+</html>
+

@@ -1,0 +1,445 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #111;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #222;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+    text-align: center;
+}
+
+/* Estilos de tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+thead {
+    background-color: #333;
+}
+
+thead th {
+    color: #fff;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #444;
+}
+
+/* Estilos de botones */
+input[type="submit"],
+.btn-editar,
+.btn-eliminar {
+    padding: 10px 15px; /* Ajuste el padding horizontal */
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    width: auto; /* Cambiar a ancho automático */
+}
+
+.delete-button {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.edit-button {
+    background-color: #ffc107;
+    color: #000;
+}
+
+/* Estilos de efecto de botón */
+.action-buttons {
+    position: relative;
+}
+
+.action-buttons:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.action-buttons:hover:before {
+    opacity: 1;
+}
+
+/* Estilo específico para el margen superior de los botones */
+.input-margin-top {
+    margin-top: 20px;
+}
+
+/* Estilo para el botón Editar */
+.btn-editar {
+    height: 40px; /* Mantener solo la altura */
+    font-size: 1.1em;
+    cursor: pointer;
+    background-color: #171717;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    transition: all .4s;
+}
+
+.btn-editar:hover {
+    border-radius: 5px;
+    transform: translateY(-10px);
+    box-shadow: 0 7px 0 -2px #f85959,
+        0 15px 0 -4px #39a2db,
+        0 16px 10px -3px #39a2db;
+}
+
+.btn-editar:active {
+    transition: all 0.2s;
+    transform: translateY(-5px);
+    box-shadow: 0 2px 0 -2px #f85959,
+        0 8px 0 -4px #39a2db,
+        0 12px 10px -3px #39a2db;
+}
+
+/* Estilo para el botón Eliminar */
+.btn-eliminar {
+    height: 40px; /* Mantener solo la altura */
+    font-size: 1.1em;
+    cursor: pointer;
+    background-color: #171717;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    transition: all .4s;
+}
+
+.btn-eliminar:hover {
+    border-radius: 5px;
+    transform: translateY(-10px);
+    box-shadow: 0 7px 0 -2px #f85959,
+        0 15px 0 -4px #39a2db,
+        0 16px 10px -3px #39a2db;
+}
+
+.btn-eliminar:active {
+    transition: all 0.2s;
+    transform: translateY(-5px);
+    box-shadow: 0 2px 0 -2px #f85959,
+        0 8px 0 -4px #39a2db,
+        0 12px 10px -3px #39a2db;
+}
+
+.btn-editar,
+.btn-eliminar {
+    width: 100%;
+    margin-top: 10px;
+}
+.btn.formulario-genial {
+    width: 130px;
+    height: 40px;
+    font-size: 1.1em;
+    cursor: pointer;
+    background-color: #171717;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    transition: all .4s;
+}
+
+.btn.formulario-genial:hover {
+    border-radius: 5px;
+    transform: translateY(-10px);
+    box-shadow: 0 7px 0 -2px #f85959,
+    0 15px 0 -4px #39a2db,
+    0 16px 10px -3px #39a2db;
+}
+
+.btn.formulario-genial:active {
+    transition: all 0.2s;
+    transform: translateY(-5px);
+    box-shadow: 0 2px 0 -2px #f85959,
+    0 8px 0 -4px #39a2db,
+    0 12px 10px -3px #39a2db;
+}
+/* Estilos para el formulario genérico */
+.form-group {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="tel"],
+input[type="url"],
+input[type="search"],
+input[type="date"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="month"] {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+        border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.btn-success {
+    color: #fff;
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.btn-success:hover {
+    color: #fff;
+    background-color: #218838;
+    border-color: #1e7e34;
+}
+
+.btn-success:focus,
+.btn-success.focus {
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);
+}
+
+/* Estilos para el formulario genial */
+.formulario-genial .form-group {
+    margin-bottom: 1rem;
+}
+
+.formulario-genial label {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}
+
+/* Estilos para el formulario genérico */
+.form-group {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="tel"],
+input[type="url"],
+input[type="search"],
+input[type="date"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="month"] {
+    display: block;
+    width: calc(100% - 20px);
+    padding: 0.25rem 0.5rem; /* Ajuste de padding */
+    font-size: 0.9rem; /* Ajuste de tamaño de fuente */
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: 130px;
+    height: 40px;
+    font-size: 1.1em;
+    cursor: pointer;
+    background-color: #171717;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    transition: all .4s;
+}
+
+.btn:hover {
+    border-radius: 5px;
+    transform: translateY(-10px);
+    box-shadow: 0 7px 0 -2px #f85959,
+    0 15px 0 -4px #39a2db,
+    0 16px 10px -3px #39a2db;
+}
+
+.btn:active {
+    transition: all 0.2s;
+    transform: translateY(-5px);
+    box-shadow: 0 2px 0 -2px #f85959,
+    0 8px 0 -4px #39a2db,
+    0 12px 10px -3px #39a2db;
+}
+
+/* Estilos para el formulario genial */
+.formulario-genial {
+    margin-top: 20px;
+}
+
+.formulario-genial .form-group {
+    margin-bottom: 1rem;
+}
+
+.formulario-genial label {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}
+
+.formulario-genial input[type="text"],
+.formulario-genial input[type="email"],
+.formulario-genial input[type="password"],
+.formulario-genial input[type="number"],
+.formulario-genial input[type="tel"],
+.formulario-genial input[type="url"],
+.formulario-genial input[type="search"],
+.formulario-genial input[type="date"],
+.formulario-genial input[type="time"],
+.formulario-genial input[type="datetime"],
+.formulario-genial input[type="datetime-local"],
+.formulario-genial input[type="month"] {
+    display: block;
+    width: calc(100% - 20px);
+    padding: 0.25rem 0.5rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.formulario-genial .btn {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: 130px;
+    height: 40px;
+    font-size: 1.1em;
+    cursor: pointer;
+    background-color: #171717;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    transition: all .4s;
+}
+
+.formulario-genial .btn:hover {
+    border-radius: 5px;
+    transform: translateY(-10px);
+    box-shadow: 0 7px 0 -2px #f85959,
+    0 15px 0 -4px #39a2db,
+    0 16px 10px -3px #39a2db;
+}
+
+.formulario-genial .btn:active {
+    transition: all 0.2s;
+    transform: translateY(-5px);
+    box-shadow: 0 2px 0 -2px #f85959,
+    0 8px 0 -4px #39a2db,
+    0 12px 10px -3px #39a2db;
+}
+
+/* Media queries para tablet y celular */
+@media (max-width: 768px) {
+    .container {
+        max-width: 100%;
+        margin: 20px;
+    }
+    
+    table {
+        font-size: 0.8em;
+    }
+    
+    /* Ajuste de tamaño de fuente para tablet */
+    .container td:nth-child(2),
+    .container th:nth-child(2) {
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        max-width: 100%;
+        margin: 10px;
+    }
+    
+    table {
+        font-size: 0.6em;
+    }
+    
+    /* Ajuste de tamaño de fuente para celular */
+    .container td:nth-child(2),
+    .container th:nth-child(2) {
+        font-size: 1.5em;
+    }
+}

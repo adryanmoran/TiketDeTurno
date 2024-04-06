@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Asunto</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='editAsunt.css') }}">
+    
+</head>
+<body>
+    <h1>Editar Asunto</h1>
+    <form action="" method="post" onsubmit="return validarFormulario()">
+        <label for="nombre">Nuevo nombre del asunto:</label><br>
+        <input type="text" id="nombre" name="nombre" value="{{ asunto.NombreAsunto }}"><br>
+        <input type="submit" value="Guardar cambios">
+    </form>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="{{ url_for('static', filename='js/validacionAsunto.js') }}"></script>
+</body>
+</html>

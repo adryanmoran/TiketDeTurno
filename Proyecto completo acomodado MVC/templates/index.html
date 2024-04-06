@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Alumno</title>
+</head>
+<body>
+    <h1>Registro de Alumno</h1>
+    <form action="/registrar_alumno" method="POST">
+        <label for="nombre_completo">Nombre Completo:</label>
+        <input type="text" id="nombre_completo" name="nombre_completo" ><br>
+
+        <label for="curp">CURP:</label>
+        <input type="text" id="curp" name="curp" ><br>
+
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" ><br>
+
+        <label for="paterno">Apellido Paterno:</label>
+        <input type="text" id="paterno" name="paterno" ><br>
+
+        <label for="materno">Apellido Materno:</label>
+        <input type="text" id="materno" name="materno" ><br>
+
+        <label for="telefono">Teléfono:</label>
+        <input type="tel" id="telefono" name="telefono" ><br>
+
+        <label for="celular">Celular:</label>
+        <input type="tel" id="celular" name="celular" ><br>
+
+        <label for="correo">Correo Electrónico:</label>
+        <input type="email" id="correo" name="correo" ><br>
+
+        <label for="nivel_id">Nivel:</label>
+        <select id="nivel_id" name="nivel_id" >
+            {% for nivel in niveles %}
+        <option value="{{ nivel.idNivel }}">{{ nivel.NombreNivel }}</option>
+            {% endfor %}
+        </select><br>
+        <label for="municipio_id">Municipio:</label>
+        <select id="municipio_id" name="municipio_id" >
+            {% for municipio in municipios %}
+        <option value="{{ municipio.idmunicipio }}">{{ municipio.municipio }}</option>
+            {% endfor %}
+        </select><br>
+
+        <label for="asunto_id">Asunto:</label>
+        <select id="asunto_id" name="asunto_id" required>
+            {% for asunto in asuntos %}
+        <option value="{{ asunto.idAsunto }}">{{ asunto.NombreAsunto }}</option>
+            {% endfor %}
+        </select><br>
+
+
+        <button type="submit">Registrar</button>
+    </form>
+</body>
+</html>

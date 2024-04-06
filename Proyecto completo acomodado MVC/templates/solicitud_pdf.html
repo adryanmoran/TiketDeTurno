@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitud</title>
+    <style>
+        /* Estilos CSS para la plantilla del PDF */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        strong {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Información de Solicitud</h1>
+    <p><strong>Nombre del Alumno:</strong> {{ alumno.Nombre_completo }}</p>
+    <p><strong>CURP:</strong> {{ alumno.Curp }}</p>
+    <p><strong>Teléfono:</strong> {{ alumno.telefono }}</p>
+    <p><strong>Celular:</strong> {{ alumno.celular }}</p>
+    <!-- Puedes agregar más información de la solicitud aquí si lo necesitas -->
+</body>
+</html>

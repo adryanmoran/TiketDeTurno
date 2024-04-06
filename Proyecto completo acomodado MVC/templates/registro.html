@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styleRLog.css') }}">
+    <!-- Agrega la referencia a SweetAlert CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+</head>
+<body>
+    {% include 'menu.html' %}
+    <div class="container">
+        <div class="card">
+            <h2 class="card-title">Registro</h2>
+            <form action="/registro" method="POST" onsubmit="return validarFormulario()" novalidate>
+                <div class="mb-3 row">
+                    <label for="usuario" class="col-sm-2 col-form-label">Usuario:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="usuario" name="usuario">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="contraseña" class="col-sm-2 col-form-label">Contraseña:</label>
+                    <div class="col-sm-10">
+                        <input type="password" class="form-control" id="contraseña" name="contraseña">
+                        <span id="contraseña-feedback" class="input-feedback"></span>
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="confirmar_contraseña" class="col-sm-2 col-form-label">Confirmar Contraseña:</label>
+                    <div class="col-sm-10">
+                        <input type="password" class="form-control" id="confirmar_contraseña" name="confirmar_contraseña">
+                        <span id="confirmar_contraseña-feedback" class="input-feedback"></span>
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="nombre_completo" class="col-sm-2 col-form-label">Nombre Completo:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="nombre_completo" name="nombre_completo">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="puesto" class="col-sm-2 col-form-label">Puesto:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="puesto" name="puesto">
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-primary">Registrarse</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='ValidaRUser.js') }}"></script>
+</body>
+</html>

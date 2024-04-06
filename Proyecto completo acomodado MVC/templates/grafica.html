@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+    <title>Dashboard</title>
+    <!-- Agrega las bibliotecas necesarias, por ejemplo, Plotly.js -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <h1>Dashboard</h1>
+    
+    <!-- Div para mostrar la gráfica -->
+    <div id="grafica"></div>
+    
+    <!-- Script para manejar las solicitudes AJAX y dibujar la gráfica -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ url_for('static', filename='Vdash.js') }}"></script>
+</body>
+{% endblock %}

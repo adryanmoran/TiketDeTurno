@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario de Contacto Futurista</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Referencia a Font Awesome -->
+  
+    
+    <!-- Incluyendo el menú dinámico -->
+    {% include 'menu.html' %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='registroalumno.css') }}">
+
+    <!-- Incluir SweetAlert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+</head>
+<body>
+    <div class="container-form">
+        <!-- Información de Contacto -->
+        <div class="info-form">
+            <h2>Información de Contacto</h2> <!-- Título agregado -->
+            <h2>Contáctanos</h2>
+            <p>Si tienes algún problema o necesitas asistencia, estamos aquí para ayudarte.</p>
+            <a href="#"><i class="fas fa-phone"></i> 844-539-4717</a>
+            <a href="#"><i class="fas fa-envelope"></i> asuntos_escolares@uadec.edu.mx</a>
+            <a href="#"><i class="fas fa-map-marked"></i> Saltillo, Coahuila</a>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14411.561346270713!2d-100.8605425!3d25.4419296!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x868872a9d13e6c1b%3A0x4884b6bb05124874!2sFacultad%20de%20Sistemas%20UAdeC!5e0!3m2!1ses-419!2smx!4v1711619555233!5m2!1ses-419!2smx" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        
+        <!-- Formulario de Contacto -->
+        <div class="curf">
+            <h2>Formulario de Contacto</h2> <!-- Título agregado -->
+            <form action="/registrar_alumno" method="POST" class="form-container" id="formularioContacto">
+                <label for="nombre_completo">Nombre Completo:</label>
+                <input type="text" id="nombre_completo" name="nombre_completo" placeholder="Tu Nombre Completo" >
+
+                <label for="curp">CURP:</label>
+                <input type="text" id="curp" name="curp" placeholder="Tu CURP" >
+
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Tu Nombre" >
+
+                <label for="paterno">Apellido Paterno:</label>
+                <input type="text" id="paterno" name="paterno" placeholder="Tu Apellido Paterno" >
+
+                <label for="materno">Apellido Materno:</label>
+                <input type="text" id="materno" name="materno" placeholder="Tu Apellido Materno" >
+
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" placeholder="Tu Teléfono" >
+
+                <label for="celular">Celular:</label>
+                <input type="tel" id="celular" name="celular" placeholder="Tu Celular" >
+
+                <label for="correo">Correo Electrónico:</label>
+                <input type="email" id="correo" name="correo" placeholder="Tu Correo Electrónico" >
+
+                <label for="nivel_id">Nivel:</label>
+                <select id="nivel_id" name="nivel_id">
+                    {% for nivel in niveles %}
+                        <option value="{{ nivel.idNivel }}">{{ nivel.NombreNivel }}</option>
+                    {% endfor %}
+                </select>
+
+                <label for="municipio_id">Municipio:</label>
+                <select id="municipio_id" name="municipio_id">
+                    {% for municipio in municipios %}
+                        <option value="{{ municipio.idmunicipio }}">{{ municipio.municipio }}</option>
+                    {% endfor %}
+                </select>
+
+                <label for="asunto_id">Asunto:</label>
+                <select id="asunto_id" name="asunto_id">
+                    {% for asunto in asuntos %}
+                        <option value="{{ asunto.idAsunto }}">{{ asunto.NombreAsunto }}</option>
+                    {% endfor %}
+                </select>
+
+                <button type="button" onclick="validarFormulario()" class="btn-enviar">Registrar</button>
+            </form>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='validacionRegistroAlumno.js') }}"></script>
+
+</body>
+</html>

@@ -1,0 +1,102 @@
+
+        body {
+            font-family: 'Roboto', sans-serif; /* Fuente moderna */
+            background-color: #0f0f0f; /* Color de fondo negro oscuro */
+            color: #ffd700; /* Color del texto dorado */
+        }
+        
+        .container-form {
+            display: flex; /* Contenedor flexible */
+            padding: 50px;
+            background: linear-gradient(135deg, #1a1a1a, #333333); /* Degradado oscuro */
+            border-radius: 20px; /* Bordes redondeados */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Sombra suave */
+            margin: 20px auto; /* Margen bonito y centrado horizontalmente */
+            max-width: 800px; /* Ajustar el ancho máximo */
+        }
+        
+        .info-form, .curf {
+            flex: 1; /* Ambos divs ocupan el mismo espacio */
+            padding: 20px;
+        }
+        
+        .info-form a {
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            color: #ffd700; /* Color del texto dorado */
+        }
+    
+        .info-form i {
+            margin-right: 10px;
+        }
+        
+        .form-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            align-items: center;
+        }
+        
+        .curf label {
+            color: #ff8c00; /* Color del texto naranja oscuro */
+            font-weight: bold; /* Fuente en negrita */
+        }
+        
+        .curf input[type="text"],
+        .curf input[type="tel"],
+        .curf input[type="email"],
+        .curf select {
+            border: 2px solid #ff8c00; /* Borde naranja oscuro */
+            padding: 10px;
+            background-color: #191919; /* Color de fondo negro */
+            color: #ffd700; /* Color del texto dorado */
+            border-radius: 10px; /* Bordes redondeados */
+            box-shadow: 0 0 10px rgba(255, 140, 0, 0.5); /* Sombra naranja oscura */
+        }
+        
+        .curf input[type="text"]:focus,
+        .curf input[type="tel"]:focus,
+        .curf input[type="email"]:focus,
+        .curf select:focus {
+            outline: none; /* Eliminar el contorno al hacer foco */
+            border-color: #ffa500; /* Cambiar el color del borde al hacer foco */
+        }
+        
+        .curf button {
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            background: linear-gradient(45deg, #ff8c00, #ffa500); /* Degradado naranja oscuro a naranja */
+            color: #ffd700; /* Color del texto dorado */
+            border-radius: 10px; /* Bordes redondeados */
+            box-shadow: 0 0 10px rgba(255, 140, 0, 0.5); /* Sombra naranja oscura */
+            transition: background-color 0.3s ease; /* Transición suave */
+        }
+        
+        .curf button:hover {
+            background: linear-gradient(45deg, #ffa500, #ff8c00); /* Cambio de degradado al pasar el mouse */
+        }
+     
+        @media only screen and (max-width: 768px) {
+            .container-form {
+                flex-direction: column; /* Cambiar a columna en dispositivos de menos de 768px */
+            }
+        
+            .info-form, .curf {
+                flex: 1 1 100%; /* Ambos divs ocupan el 100% del ancho en dispositivos pequeños */
+            }
+        }
+        
+        @media only screen and (max-width: 600px) {
+            .form-container {
+                grid-template-columns: repeat(1, 1fr); /* Cambiar a una columna en dispositivos de menos de 600px */
+            }
+        }
+        
+        @media only screen and (max-width: 400px) {
+            .curf button {
+                padding: 15px 20px; /* Aumentar el espacio interno del botón en dispositivos de menos de 400px */
+            }
+        }
+ 
