@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='detallesAlum.css') }}">
+    <title>Detalle del Alumno</title>
+</head>
+<body>
+    {% include 'menu.html' %}
+    <div class="container"> <!-- Asegúrate de tener la clase container aquí -->
+        <div class="one-div"> <!-- Cambio de clase de 'card' a 'one-div' -->
+            <div class="card_content">
+                <h1>Detalle del Alumno</h1>
+                <p>Nombre Completo: {{ alumno.Nombre_completo }}</p>
+                <!-- Mostrar otros detalles del alumno aquí -->
+
+                <h2>Detalle de la Solicitud:</h2>
+                {% if solicitud %}
+                    <p>Turno: {{ solicitud.Turno }}</p>
+                    <p>Fecha de Solicitud: {{ solicitud.fecha }}</p>
+                    <p>Proceso: {{ solicitud.Proceso }}</p>
+                    <!-- Agregar el botón para generar el PDF -->
+                    <div class="button-container">
+                        <a href="{{ url_for('generar_comprobante', id_solicitud=solicitud.idSolicitud) }}" class="btn-pdf">PDF</a>
+                        <a href="/editar_alumno/{{ alumno.idAlumno }}" class="btn-edit">Editar</a>
+                        <form action="/eliminar_alumno/{{ alumno.idAlumno }}" method="post" onsubmit="return confirm('¿Estás seguro de que deseas eliminar este alumno?');">
+                            <input type="submit" value="Eliminar" class="btn-delete">
+                        </form>
+                        <a href="/" class="btn-home">Inicio</a>
+                    </div>
+                {% else %}
+                    <p>No hay solicitud asociada a este alumno.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</body>
