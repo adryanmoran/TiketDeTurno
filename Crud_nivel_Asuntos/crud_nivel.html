@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}Lista de Niveles{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='nivel.css') }}">
+<!-- Agrega aquí cualquier otra referencia a tus estilos o scripts -->
+
+<div class="container">
+    <h1>Lista de Niveles</h1>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>Nombre del Nivel</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for nivel in niveles %}
+            <tr>
+                <td>{{ nivel.idNivel }}</td>
+                <td>{{ nivel.NombreNivel }}</td>
+                <td>
+                    <div class="btn-group" role="group" aria-label="Acciones">
+                        <form action="/eliminar_nivel/{{ nivel.idNivel }}" method="post">
+                            <button type="submit" class="btn btn-eliminar">Eliminar</button>
+                        </form>
+                        <a href="{{ url_for('editar_nivel', id=nivel.idNivel) }}" class="btn btn-editar">Editar</a>
+                    </div>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <form action="/agregar_nivel" method="post" class="formulario-genial">
+        <div class="form-group">
+            <label for="nombre">Nombre del nivel:</label>
+            <input type="text" class="form-control" id="nombre" name="nombre">
+        </div>
+        <button type="submit" class="btn btn-success">Agregar</button>
+    </form>
+</div>
+{% endblock %}
+

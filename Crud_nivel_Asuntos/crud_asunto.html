@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block title %}Lista de Asuntos{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='asunto.css') }}">
+<!-- Agrega aquí cualquier otra referencia a tus estilos o scripts -->
+
+<div class="container">
+    <h1>Lista de Asuntos</h1>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>Nombre del Asunto</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for asunto in asuntos %}
+            <tr>
+                <td>{{ asunto.idAsunto }}</td>
+                <td>{{ asunto.NombreAsunto }}</td>
+                <td>
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <button type="button" class="btn btn-eliminar" onclick="eliminarAsunto({{ asunto.idAsunto }})">Eliminar</button>
+                        <form action="/editar/{{ asunto.idAsunto }}" method="get">
+                            <button type="submit" class="btn btn-editar">Editar</button>
+                        </form>
+                    </div>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <form action="/agregar" method="post" class="formulario-genial">
+        <div class="form-group">
+            <label for="nombre">Nombre del asunto:</label>
+            <input type="text" class="form-control" id="nombre" name="nombre">
+        </div>
+        <button type="submit" class="btn btn-success">Agregar</button>
+    </form>
+</div>
+
+<script>
+    function eliminarAsunto(idAsunto) {
+        if (confirm("¿Estás seguro de que quieres eliminar este asunto?")) {
+            // Envía una solicitud DELETE al servidor
+            fetch(`/eliminar_atributo_asunto/${idAsunto}`, {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Recarga la página después de eliminar el asunto
+                    window.location.reload();
+                } else {
+                    // Maneja errores de respuesta del servidor
+                    alert("Error al eliminar el asunto");
+                }
+            })
+            .catch(error => {
+                // Maneja errores de red o de solicitud
+                alert("Error al eliminar el asunto");
+                console.error('Error:', error);
+            });
+        }
+    }
+</script>
+
+{% endblock %}
