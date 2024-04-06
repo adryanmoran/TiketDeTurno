@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modificar Alumno y Solicitud</title>
+</head>
+<body>
+    <h1>Modificar Alumno y Solicitud</h1>
+    <form method="POST" action="/modificar_alumno_nombre/{{ alumno.Nombre_completo }}">
+        <!-- Campos del Alumno -->
+        <label for="nuevo_nombre">Nuevo Nombre del Alumno:</label>
+        <input type="text" id="nuevo_nombre" name="nuevo_nombre" value="{{ alumno.Nombre_completo }}" ><br><br>
+
+        <label for="curp">Nuevo CURP:</label>
+        <input type="text" id="curp" name="curp" value="{{ alumno.Curp }}" ><br><br>
+
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" value="{{ alumno.nombre }}" ><br><br>
+
+        <label for="paterno">Apellido Paterno:</label>
+        <input type="text" id="paterno" name="paterno" value="{{ alumno.paterno }}" ><br><br>
+
+        <label for="materno">Apellido Materno:</label>
+        <input type="text" id="materno" name="materno" value="{{ alumno.materno }}" ><br><br>
+
+        <label for="telefono">Teléfono:</label>
+        <input type="text" id="telefono" name="telefono" value="{{ alumno.telefono }}" ><br><br>
+
+        <label for="celular">Celular:</label>
+        <input type="text" id="celular" name="celular" value="{{ alumno.celular }}" ><br><br>
+
+        <label for="correo">Correo Electrónico:</label>
+        <input type="email" id="correo" name="correo" value="{{ alumno.correo }}" ><br><br>
+
+        <!-- Campos de la Solicitud -->
+        <label for="turno">Nuevo Turno:</label>
+        <input type="text" id="turno" name="turno" value="{{ solicitud.Turno }}" ><br><br>
+
+        <label for="id_municipio">Nuevo ID Municipio:</label>
+        <input type="text" id="id_municipio" name="id_municipio" value="{{ solicitud.id_municipio }}" ><br><br>
+
+        <label for="id_asunto">Nuevo ID Asunto:</label>
+        <input type="text" id="id_asunto" name="id_asunto" value="{{ solicitud.id_asunto }}" ><br><br>
+
+        <label for="fecha">Nueva Fecha:</label>
+        <input type="date" id="fecha" name="fecha" value="{{ solicitud.fecha.strftime('%Y-%m-%d') }}" ><br><br>
+
+        <label for="proceso">Nuevo Proceso:</label>
+        <input type="text" id="proceso" name="proceso" value="{{ solicitud.Proceso }}" ><br><br>
+
+        <!-- Agregar más campos de modificación para la solicitud si es necesario -->
+        <button type="submit">Guardar Cambios</button>
+    </form>
+</body>
+</html>
+

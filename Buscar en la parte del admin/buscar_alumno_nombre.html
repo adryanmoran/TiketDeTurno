@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}Buscar Estudiante por Nombre{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='buscarnomb.css') }}">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
+<!-- Incluye SweetAlert -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<h1>Buscar Estudiante por Nombre</h1>
+<form method="post" onsubmit="return validateForm()">
+    
+    <input type="text" id="nombre_buscar" name="nombre_buscar" class="styled-input" placeholder="Nombre Completo...">
+    <button type="submit" class="styled-button">Buscar</button>
+</form>
+
+<script>
+    function validateForm() {
+        var nombre = document.getElementById("nombre_buscar").value;
+        if (nombre == "") {
+            Swal.fire({
+                icon: 'error',
+                title: 'Campo vacío',
+                text: 'Por favor ingrese un nombre para buscar.'
+            });
+            return false;
+        }
+        return true;
+    }
+</script>
+{% endblock %}
