@@ -1,0 +1,57 @@
+body {
+    background-color: #0c0c0c;
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+#header {
+    background-image: url('header-background.jpg'); /* Reemplaza 'header-background.jpg' con tu imagen futurista */
+    background-size: cover;
+    height: 200px; /* Ajusta la altura según sea necesario */
+}
+
+#container {
+    padding: 20px;
+    text-align: center;
+}
+
+#content {
+    margin-top: 50px;
+}
+
+#error-title {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: white; /* Texto blanco */
+}
+
+#error-message {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: white; /* Texto blanco */
+}
+
+#back-button {
+    padding-left: 33px;
+    padding-right: 33px;
+    padding-bottom: 16px;
+    padding-top: 16px;
+    border-radius: 9px;
+    background: #d5f365;
+    border: none;
+    font-family: inherit;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+#back-button:hover {
+    box-shadow: 7px 5px 56px -14px #C3D900;
+}
+
+#back-button:active {
+    transform: scale(0.97);
+    box-shadow: 7px 5px 56px -10px #C3D900;
+}

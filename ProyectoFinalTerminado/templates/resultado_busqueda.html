@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado de la búsqueda</title>
+</head>
+<body>
+    <h1>Resultado de la búsqueda</h1>
+    {% if alumno %}
+        <p>Nombre del alumno: {{ alumno.Nombre_completo }}</p>
+        <!-- Mostrar otros detalles del alumno aquí -->
+        <a href="{{ url_for('editar', id_alumno=alumno.idAlumno) }}">Editar</a>
+        <form action="{{ url_for('eliminar', id_alumno=alumno.idAlumno) }}" method="post">
+            <button type="submit">Eliminar</button>
+        </form>
+    {% else %}
+        <p>Alumno no encontrado.</p>
+    {% endif %}
+</body>
+</html>

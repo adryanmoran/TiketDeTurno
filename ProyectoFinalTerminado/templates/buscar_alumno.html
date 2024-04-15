@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include 'menu.html' %}
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Buscar_curp/buscarCurp.css') }}">
+    <title>Buscar Alumno</title>
+</head>
+<body>
+    <h1>Buscar Alumno por CURP</h1>
+    <form action="/buscar_alumno" method="post" onsubmit="return validateForm()">
+
+        <div class="input-container">
+            <label for="curp_buscar">CURP:</label>
+            <input type="text" id="curp_buscar" name="curp_buscar">
+            <button type="submit">Buscar</button>
+        </div>
+        
+    </form>
+
+    <script src="{{ url_for('static', filename='Buscar_curp/curp.js') }}"></script>
+</body>
+</html>

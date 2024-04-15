@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Nivel</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='editarNiv.css') }}">
+
+</head>
+<body>
+    <div class="container">
+        <h1>Editar Nivel</h1>
+        <form action="" method="post">
+            <label for="nombre">Nuevo nombre del nivel:</label><br>
+            <input type="text" id="nombre" name="nombre" value="{{ nivel.NombreNivel }}"><br>
+            <input type="submit" value="Guardar cambios">
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="{{ url_for('static', filename='ValEditNivel.js') }}"></script>
+
+</body>
+</html>

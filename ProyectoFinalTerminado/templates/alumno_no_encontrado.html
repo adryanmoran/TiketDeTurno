@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='NoEncontrado.css') }}">
+</head>
+
+<body>
+    {% include 'menu.html' %}
+    <div class="header" id="header">
+       
+    </div>
+    <div class="container" id="container">
+        <div class="content" id="content">
+            <h1 id="error-title">¡Error!</h1>
+            <p id="error-message">No se encontró ningún alumno con el CURP proporcionado.</p>
+            <button id="back-button" onclick="window.location.href='/buscar_alumno'">Volver</button>
+        </div>
+    </div>
+</body>
+</html>

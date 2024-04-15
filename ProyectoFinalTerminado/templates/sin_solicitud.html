@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sin Solicitud</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='SinSolicitud.css') }}">
+    {% include 'menu.html' %}
+</head>
+<body>
+    <h1>Sin Solicitud</h1>
+    <p><strong>Nombre Completo:</strong> {{ alumno.Nombre_completo }}</p>
+    <p><strong>CURP:</strong> {{ alumno.Curp }}</p>
+    <!-- Otros detalles del alumno -->
+    <p>No se encontró ninguna solicitud para este alumno.</p>
+    <button onclick="window.location.href='/buscar_alumno'">Volver</button>
+</body>
+</html>

@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}Editar Solicitud{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='Buscar_nombre/editSoli.css') }}">
+<div class="container">
+    <h1>Editar Solicitud</h1>
+    <form method="post"  class="needs-validation" novalidate>
+        <div class="form-group">
+            <label for="turno">Turno:</label>
+            <input type="text" class="form-control" id="turno" name="turno" value="{{ solicitud.Turno }}" >
+           
+        </div>
+        <div class="form-group">
+            <label for="id_municipio">ID Municipio:</label>
+            <select class="form-control" id="id_municipio" name="id_municipio">
+                {% for municipio in municipios %}
+                    <option value="{{ municipio.idmunicipio }}" {% if municipio.idmunicipio == solicitud.id_municipio %} selected {% endif %}>{{ municipio.municipio }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="id_asunto">ID Asunto:</label>
+            <select class="form-control" id="id_asunto" name="id_asunto">
+                {% for asunto in asuntos %}
+                    <option value="{{ asunto.idAsunto }}" {% if asunto.idAsunto == solicitud.id_asunto %} selected {% endif %}>{{ asunto.NombreAsunto }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="fecha">Fecha:</label>
+            <input type="date" class="form-control" id="fecha" name="fecha" value="{{ solicitud.fecha }}" >
+    
+        </div>
+        <div class="form-group">
+            <label for="proceso">Proceso:</label>
+            <select class="form-control" id="proceso" name="proceso">
+                <option value="Resuelto" {% if solicitud.Proceso == "Resuelto" %} selected {% endif %}>Resuelto</option>
+                <option value="Pendiente" {% if solicitud.Proceso == "Pendiente" %} selected {% endif %}>Pendiente</option>
+                <option value="En Proceso" {% if solicitud.Proceso == "En Proceso" %} selected {% endif %}>En Proceso</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+    </form>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script src="{{ url_for('static', filename='Buscar_nombre/validacionEditSol.js') }}"></script>
+{% endblock %}

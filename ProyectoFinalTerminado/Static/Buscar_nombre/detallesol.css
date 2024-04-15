@@ -1,0 +1,127 @@
+.container {
+    color: white;
+    position: relative;
+    font-family: sans-serif;
+    width: 60%; /* Ajusta el ancho del contenedor según sea necesario */
+    margin: 0 auto; /* Esto centrará el contenedor horizontalmente */
+    text-align: center; /* Esto centrará el contenido dentro del contenedor */
+  }
+  
+  .container::before,
+  .container::after {
+    content: "";
+    background-color: #fab5704c;
+    position: absolute;
+  }
+  
+  .container::before {
+    border-radius: 50%;
+    width: 20%; /* Ajusta el tamaño del círculo antes del contenedor */
+    height: 20%; /* Ajusta el tamaño del círculo antes del contenedor */
+    top: 10%; /* Ajusta la posición del círculo antes del contenedor */
+    right: 25%; /* Ajusta la posición del círculo antes del contenedor */
+  }
+  
+  .container::after {
+    content: "";
+    position: absolute;
+    height: 10%; /* Ajusta la altura de la línea antes del contenedor */
+    top: 2%; /* Ajusta la posición de la línea antes del contenedor */
+    right: 15%; /* Ajusta la posición de la línea antes del contenedor */
+    border: 1px solid;
+  }
+  
+  .container .box {
+    width: 80%; /* Ajusta el ancho del contenedor principal */
+    height: auto; /* Hacemos que la altura se ajuste automáticamente al contenido */
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.074);
+    border: 1px solid rgba(255, 255, 255, 0.222);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border-radius: 0.7rem;
+    transition: all ease 0.3s;
+    margin: 0 auto; /* Esto centrará el contenedor principal horizontalmente */
+  }
+  
+  .container .box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .container .box .title {
+    font-size: 2rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+  }
+  
+  .container .box div strong {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  
+  .container .box div p {
+    margin: 0;
+    font-size: 0.9em;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+  }
+  
+  .container .box div span {
+    font-size: 0.7rem;
+    font-weight: 300;
+  }
+  
+  .container .box div span:nth-child(3) {
+    font-weight: 500;
+    margin-right: 0.2rem;
+  }
+  
+  .container .box:hover {
+    box-shadow: 0px 0px 20px 1px #ffbb763f;
+    border: 1px solid rgba(255, 255, 255, 0.454);
+  }
+  .container {
+    color: black; /* Define el color del texto dentro del contenedor como negro */
+  }
+  
+  .container label {
+    color: black; /* Define el color de los labels como negro */
+  }
+
+  .container .button-container {
+    display: flex; /* Utiliza flexbox para colocar los botones uno al lado del otro */
+    justify-content: space-between; /* Distribuye el espacio entre los botones */
+  }
+  
+  .container .button-container .btn-edit,
+  .container .button-container .btn-delete {
+    /* Estilos de los botones */
+    padding: 10px 20px;
+    text-transform: uppercase;
+    border-radius: 8px;
+    font-size: 17px;
+    font-weight: 500;
+    color: #00000080;
+    text-shadow: none;
+    background: transparent;
+    cursor: pointer;
+    box-shadow: transparent;
+    border: 1px solid #ffffff80;
+    transition: 0.5s ease;
+    user-select: none;
+  }
+  
+  .container .button-container .btn-edit:hover,
+  .container .button-container .btn-delete:hover,
+  .container .button-container .btn-edit:focus,
+  .container .button-container .btn-delete:focus {
+    /* Estilos al pasar el ratón o enfocar */
+    color: #ffffff;
+    background: #000000;
+    border: 1px solid #000000;
+    text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff;
+    box-shadow: 0 0 5px #000000, 0 0 20px #000000, 0 0 50px #000000, 0 0 100px #020202;
+  }
+  

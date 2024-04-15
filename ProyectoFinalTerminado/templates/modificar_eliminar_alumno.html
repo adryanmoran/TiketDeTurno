@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modificar o Eliminar Alumno</title>
+</head>
+<body>
+    <h1>Modificar o Eliminar Alumno</h1>
+    <form method="POST">
+        <label for="nombre_completo">Nombre Completo:</label>
+        <input type="text" name="nombre_completo" value="{{ alumno.nombre_completo }}"><br>
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" value="{{ alumno.nombre }}"><br>
+        <label for="paterno">Apellido Paterno:</label>
+        <input type="text" name="paterno" value="{{ alumno.paterno }}"><br>
+        <label for="materno">Apellido Materno:</label>
+        <input type="text" name="materno" value="{{ alumno.materno }}"><br>
+        <label for="telefono">Teléfono:</label>
+        <input type="text" name="telefono" value="{{ alumno.telefono }}"><br>
+        <label for="celular">Celular:</label>
+        <input type="text" name="celular" value="{{ alumno.celular }}"><br>
+        <label for="correo">Correo:</label>
+        <input type="text" name="correo" value="{{ alumno.correo }}"><br>
+        <label for="nivel_id">Nivel:</label>
+        <input type="text" name="nivel_id" value="{{ alumno.nivel_id }}"><br>
+        <label for="municipio_id">Municipio:</label>
+        <input type="text" name="municipio_id" value="{{ alumno.municipio_id }}"><br>
+        <label for="asunto_id">Asunto:</label>
+        <input type="text" name="asunto_id" value="{{ alumno.asunto_id }}"><br>
+        <input type="submit" name="action" value="Modificar">
+        <input type="submit" name="action" value="Eliminar">
+    </form>
+</body>
+</html>

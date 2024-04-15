@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    {% include 'menu.html' %}
+    <div class="form">
+        <form id="loginForm" action="/login" method="POST" onsubmit="return validateForm()">
+            <h2 class="form-title card-title">Login</h2>
+            <div class="input-container">
+                <label for="usuario" class="form-label">Usuario:</label><br>
+                <input type="text" id="usuario" name="usuario" class="form-control" placeholder="Usuario">
+            </div>
+            <div class="input-container">
+                <label for="contraseña" class="form-label">Contraseña:</label><br>
+                <input type="password" id="contraseña" name="contraseña" class="form-control" placeholder="Contraseña">
+            </div>
+            <div class="input-container">
+                <div class="g-recaptcha" data-sitekey="6LcecbApAAAAADX9My5XAcrWfoJTB-s-hfbBRLjD"></div>
+            </div>
+            <div class="input-container">
+                <button type="submit" class="submit custom-center">Iniciar sesión</button>
+            </div>
+            <p class="signup-link custom-center">¿No tienes cuenta? <a href="/registro">Regístrate aquí</a></p>
+        </form>
+        <div class="bg-stars">
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+        </div>
+    </div>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="{{ url_for('static', filename='login/ValidaLogin.js') }}"></script>
+
+</body>
+</html>

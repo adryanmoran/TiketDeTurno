@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}Lista de Asuntos{% endblock %}
+
+{% block content %}
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Interfaz para API de Niveles</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='Niv/Niv.css') }}" >
+
+</head>
+<body id="body">
+    <h1>Niveles</h1>
+
+    <!-- Formulario para Crear un Nuevo Nivel -->
+    <h2>Crear Nivel</h2>
+    <form id="create-form" action="/niveles" method="post">
+        <input type="text" name="NombreNivel" placeholder="Nombre del Nivel" required>
+        <button type="submit">Crear Nivel</button>
+    </form>
+
+    <!-- Formulario para Actualizar un Nivel Existente -->
+    <h2>Actualizar Nivel</h2>
+    <form id="update-form" action="/niveles" method="post"> <!-- Cambiar el método a PUT en el servidor -->
+        <input type="number" name="idNivel" placeholder="ID del Nivel" required>
+        <input type="text" name="NombreNivel" placeholder="Nuevo Nombre del Nivel" required>
+        <button type="submit">Actualizar Nivel</button>
+    </form>
+
+    <!-- Formulario para Eliminar un Nivel -->
+    <h2>Eliminar Nivel</h2>
+    <form id="delete-form" action="/niveles" method="post"> <!-- Cambiar el método a DELETE en el servidor -->
+        <input type="number" name="idNivel" placeholder="ID del Nivel" required>
+        <button type="submit">Eliminar Nivel</button>
+    </form>
+
+    <!-- Sección para Mostrar Niveles -->
+    <h2>Listado de Niveles</h2>
+    <button id="load-niveles">Cargar Niveles</button>
+    <ul id="niveles-list" style="display: none;"></ul>
+    <script src="{{ url_for('static', filename='NIV/Niv.js') }}"></script>
+
+</body>
+</html>
+{% endblock %}

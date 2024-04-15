@@ -1,0 +1,70 @@
+body {
+    background-color: #f0f0f0;
+    background-image: url("/static/fondo9.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    opacity: 0.8;
+    text-align: center;
+}
+#content {
+    margin: 0 auto;
+    width: 50%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+nav {
+    text-align: center;
+    margin-bottom: 20px;
+}
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+nav ul li {
+    margin-right: 10px;
+}
+nav ul li a {
+    text-decoration: none;
+    color: white;
+}
+nav ul li a:hover {
+    color: #ccc;
+}
+@media screen and (max-width: 768px) {
+    nav ul {
+        display: none;
+    }
+    .menu-icon {
+        display: block;
+        cursor: pointer;
+        margin-right: 10px;
+    }
+    .menu-icon .bar {
+        width: 25px;
+        height: 3px;
+        background-color: white;
+        margin: 5px auto;
+        transition: all 0.3s ease-in-out;
+    }
+    .menu-icon:hover .bar {
+        background-color: #ccc;
+    }
+    .menu-icon.active .bar:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    .menu-icon.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-icon.active .bar:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+    nav ul.show {
+        display: block;
+    }
+}

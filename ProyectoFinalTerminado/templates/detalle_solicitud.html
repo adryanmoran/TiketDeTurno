@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}Detalle de la Solicitud{% endblock %}
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='Buscar_nombre/detallesol.css') }}">
+
+<div class="container">
+    <div class="box">
+        <div class="title">Detalle de la Solicitud</div>
+        <div>
+            <strong>Nombre Completo:</strong>
+            <p>{{ alumno.Nombre_completo }}</p>
+            <strong>CURP:</strong>
+            <p>{{ alumno.Curp }}</p>
+            <!-- Otros detalles del alumno -->
+            <strong>Solicitud:</strong>
+            <p>Turno: {{ solicitud.Turno }}</p>
+            <p>Municipio: {{ municipio_nombre }}</p>
+            <!-- Otros campos de la solicitud -->
+            <p>Alumno: {{ solicitud.id_alumno }}</p>
+            <p>Asunto: {{ asunto_nombre }}</p>
+            <p>Fecha: {{ solicitud.fecha }}</p>
+            <p>Proceso: {{ solicitud.Proceso }}</p>
+        </div>
+        <!-- Opciones para editar y eliminar -->
+        <div class="button-container">
+            <a href="/editar_solicitud/{{ solicitud.idSolicitud }}" class="btn-edit">Editar</a>
+            <form action="/eliminar_solicitud/{{ solicitud.idSolicitud }}" method="post" onsubmit="return confirm('¿Estás seguro de que deseas eliminar esta solicitud?');">
+                <input type="submit" value="Eliminar" class="btn-delete">
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

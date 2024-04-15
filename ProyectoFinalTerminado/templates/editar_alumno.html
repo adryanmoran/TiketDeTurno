@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Alumno</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='edit_alum/editalum.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="{{ url_for('static', filename='edit_alum/ValidacionEditarAlum.js') }}"></script>
+
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="mt-5 form-title">Editar Alumno <span>-</span></h1>
+        <form action="" method="post" class="mt-4 form" onsubmit="return validarFormulario()">
+            <div class="form-group">
+                <label for="nombre_completo">Nombre Completo:</label>
+                <input type="text" id="nombre_completo" name="nombre_completo" value="{{ alumno.Nombre_completo }}" class="form-control">
+            </div>
+            <div class="form-group horizontal">
+                <div class="inputbox">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" name="nombre" value="{{ alumno.nombre }}" class="form-control">
+                </div>
+                <div class="inputbox">
+                    <label for="paterno">Apellido Paterno</label>
+                    <input type="text" id="paterno" name="paterno" value="{{ alumno.paterno }}" class="form-control">
+                </div>
+                <div class="inputbox">
+                    <label for="materno">Apellido Materno</label>
+                    <input type="text" id="materno" name="materno" value="{{ alumno.materno }}" class="form-control">
+                </div>
+            </div>
+            <div class="form-group horizontal">
+                <div class="inputbox">
+                    <label for="telefono">Teléfono</label>
+                    <input type="text" id="telefono" name="telefono" value="{{ alumno.telefono }}" class="form-control">
+                </div>
+                <div class="inputbox">
+                    <label for="celular">Celular</label>
+                    <input type="text" id="celular" name="celular" value="{{ alumno.celular }}" class="form-control">
+                </div>
+                <div class="inputbox">
+                    <label for="correo">Correo Electrónico</label>
+                    <input type="email" id="correo" name="correo" value="{{ alumno.correo }}" class="form-control">
+                </div>
+            </div>
+            <div class="form-group horizontal">
+                <div class="inputbox">
+                    <label for="nivel_id">Nivel:</label>
+                    <select name="nivel_id" id="nivel_id" class="form-control">
+                        {% for nivel in niveles %}
+                            <option value="{{ nivel.idNivel }}" {% if nivel.idNivel == alumno.nivel_id %} selected {% endif %}>{{ nivel.NombreNivel }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="inputbox">
+                    <label for="municipio_id">Municipio:</label>
+                    <select name="municipio_id" id="municipio_id" class="form-control">
+                        {% for municipio in municipios %}
+                            <option value="{{ municipio.idmunicipio }}" {% if municipio.idmunicipio == alumno.municipio_id %} selected {% endif %}>{{ municipio.municipio }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="inputbox">
+                    <label for="asunto_id">Asunto:</label>
+                    <select name="asunto_id" id="asunto_id" class="form-control">
+                        {% for asunto in asuntos %}
+                            <option value="{{ asunto.idAsunto }}" {% if asunto.idAsunto == alumno.asunto_id %} selected {% endif %}>{{ asunto.NombreAsunto }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            <div class="btn-container">
+                <button type="submit" class="btn-primary">Guardar Cambios</button>
+                <a href="/perfil" class="btn-home">Inicio</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

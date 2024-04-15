@@ -1,0 +1,116 @@
+/* Estilos para el cuerpo y la navegación */
+body {
+    background-image: url("/static/winnet.jpg");
+    background-size: cover; /* Agregado */
+    background-position: center bottom; /* Agregado */
+    font-family: 'Roboto', sans-serif; /* Agregado */
+    background-repeat: no-repeat; /* Agregado */
+    height: 100vh; /* Agregado */
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background-color: #1e1e1e;
+    padding: 20px;
+}
+
+ul {
+    list-style-type: none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    display: inline-block;
+    margin-right: 20px;
+    position: relative;
+}
+
+/* Estilos para los enlaces */
+a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    background-color: #444444;
+}
+
+/* Animación */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+li:nth-child(odd) a {
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+li:nth-child(even) a {
+    animation: fadeIn 0.5s ease-in-out forwards;
+    animation-delay: 0.2s;
+}
+
+/* Media queries para dispositivos móviles y tablets */
+@media only screen and (max-width: 768px) {
+    nav {
+        padding: 10px;
+    }
+    li {
+        display: block;
+        margin: 10px 0;
+    }
+    a {
+        display: block;
+        padding: 10px;
+    }
+    a {
+        font-size: 16px; /* Reducir el tamaño de fuente */
+        padding: 8px 16px; /* Reducir el relleno */
+    }
+
+    /* Estilo adicional para dispositivos de tamaño pequeño */
+    .menu ul {
+        display: none; /* Ocultar la lista de elementos */
+    }
+    .menu ul.expanded {
+        display: block; /* Mostrar la lista de elementos cuando se hace clic en el menú */
+    }
+    .menu-toggle {
+        display: block; /* Mostrar el botón de menú */
+    }
+}
+
+/* Oculta el botón de menú en dispositivos de tamaño grande */
+@media only screen and (min-width: 769px) {
+    .menu-toggle {
+        display: none;
+    }
+}
+
+
+/* Estilos solo para el botón de menú */
+.menu-toggle {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    transition: transform 0.3s ease; /* Añade una transición para un efecto suave */
+}
+
+.menu-toggle:hover {
+    transform: scale(1.1); /* Escala ligeramente el botón al pasar el cursor sobre él */
+}

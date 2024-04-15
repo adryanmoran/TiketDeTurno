@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú HTML</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='Menu_principal/menu.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Registro_alumno/registroalumno.css') }}" id="registroalumno-css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Registro_user/styleRLog.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='login/styleLogin.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10" id="sweet-alert-js"></script>
+
+</head>
+<body>
+    <div class="menu-container">
+        <nav class="menu">
+            <button class="menu-toggle" onclick="toggleMenu()">Menú</button>
+            <ul>
+                <li><a href="/">Inicio</a></li>
+                {% block registro %}
+                <li><a href="{{ url_for('registro_alumno_view') }}">Registrar de</a></li>
+                {% endblock %}
+                {% block buscar %}
+                <li><a href="{{ url_for('buscar_alumno') }}">Buscar alumno</a></li>
+                {% endblock %}
+                {% block registro2 %}
+                <li><a href="{{ url_for('registro') }}">Registro user</a></li>
+                {% endblock %}
+                {% block login %}
+                <li><a href="{{ url_for('login') }}">Login</a></li>
+                {% endblock %}
+            </ul>
+        </nav>
+    </div>
+
+    <script src="{{ url_for('static', filename='Menu_principal/menu.js') }}"></script>
+</body>
+</html>
